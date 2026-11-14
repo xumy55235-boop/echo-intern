@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回音 · 今日</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<main class="wrap">
+
+  <header class="ph">
+    <span class="ph__eyebrow" id="greetDate">今天</span>
+    <div class="ph__row">
+      <h1 class="ph__title" id="greetTitle">你好</h1>
+      <div class="ph__side"><span class="badge badge--mint" id="streakBadge">刚刚开始</span></div>
+    </div>
+    <p class="ph__desc" id="greetSub"></p>
+  </header>
+
+  <div id="firstRun"></div>
+
+  <section class="today" id="todayCard"></section>
+
+  <div class="statstrip mt-2" id="stats"></div>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--mint">✓</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">今天先做这三件</div>
+        <div class="card__desc">做完打勾，今天就算达标</div>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="sprint.html">全部清单</a>
+    </div>
+    <div id="todayTasks"></div>
+    <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--line-2)">
+      <div class="card__desc" style="margin-bottom:7px">此刻感觉如何？点一个最接近的</div>
+      <div class="mood-row" id="moods"></div>
+      <div class="field-note" id="moodHint" style="margin-top:6px"></div>
+    </div>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--amber">!</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">该跟进了 <span class="badge badge--amber" id="reminderCount" style="display:none"></span></div>
+        <div class="card__desc">超过跟进周期还没动静，先催一句再决定去留</div>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="tracker.html">台账</a>
+    </div>
+    <div id="reminders"></div>
+  </section>
+
+  <details class="fold mt-2" id="calendarCard" style="display:none">
+    <summary>接下来的面试 <span class="badge badge--violet" id="calCount" style="display:none"></span></summary>
+    <div class="fold__body" id="calendarList"></div>
+  </details>
+
+  <details class="fold mt-2">
+    <summary>投递漏斗 · 哪一步流失最多</summary>
+    <div class="fold__body">
+      <div class="funnel" id="funnel"></div>
+      <div class="field-note" id="funnelNote"></div>
+      <a class="btn btn--sm mt-2" href="tracker.html">打开台账看全部</a>
+    </div>
+  </details>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--cyan">◎</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">你在这里</div>
+        <div class="card__desc">同校同年级的匿名分布，看得见参照</div>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="wall.html">进度墙</a>
+    </div>
+    <div id="peerSummary"></div>
+    <div class="mt-2" id="peerBars"></div>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--rose">!</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">这几句话，先别急着信</div>
+        <div class="card__desc">遇到类似的，粘进防坑雷达查一下</div>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="radar.html">去查</a>
+    </div>
+    <div id="phraseList"></div>
+  </section>
+
+</main>
+
+<div id="foot"></div>
+
+<script src="js/store.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回音 · 我的</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<main class="wrap">
+
+  <header class="ph">
+    <span class="ph__eyebrow">我的陪跑档案</span>
+    <div class="ph__row">
+      <h1 class="ph__title" id="pfName">我的</h1>
+      <div class="ph__side"><span class="badge badge--line" id="pfGrade">大二</span></div>
+    </div>
+    <p class="ph__desc" id="pfSub">设定一次，进度、提醒和诊断口径都会跟着你走。</p>
+  </header>
+
+  <section class="card">
+    <div class="row" style="flex-wrap:nowrap;align-items:flex-start">
+      <span class="ava" id="pfAva" style="width:48px;height:48px;font-size:17px">回</span>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:16px;font-weight:750;letter-spacing:-.02em" id="pfCardName">同学</div>
+        <div class="card__desc" id="pfCardSub">普通院校 · 未填写专业</div>
+        <div class="row mt-1">
+          <span class="badge badge--brand" id="pfRole">互联网实习</span>
+          <span class="badge badge--line" id="pfCity">城市不限</span>
+        </div>
+      </div>
+    </div>
+    <div class="card__foot">
+      <span class="card__desc">画像只影响文案与目标，不会上传。</span>
+    </div>
+  </section>
+
+  <section class="card mt-2" id="goalBox"></section>
+
+  <details class="fold mt-2">
+    <summary>编辑画像</summary>
+    <div class="fold__body">
+      <div class="form-grid mt-2">
+        <div class="field">
+          <label class="label" for="fName">称呼</label>
+          <input class="input" id="fName" placeholder="例：小周">
+        </div>
+        <div class="field">
+          <label class="label" for="fGrade">年级</label>
+          <select class="select" id="fGrade">
+            <option>大一</option><option>大二</option><option>大三</option>
+            <option>大四</option><option>研一</option><option>研二</option><option>已毕业</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label" for="fSchool">学校</label>
+          <input class="input" id="fSchool" placeholder="例：华东师范大学">
+        </div>
+        <div class="field">
+          <label class="label" for="fMajor">专业</label>
+          <input class="input" id="fMajor" placeholder="例：信息管理">
+        </div>
+        <div class="field span-2">
+          <label class="label" for="fRole">目标岗位</label>
+          <input class="input" id="fRole" placeholder="例：数据分析 / 产品运营">
+        </div>
+        <div class="field">
+          <label class="label" for="fCity">目标城市</label>
+          <input class="input" id="fCity" placeholder="例：上海 / 不限">
+        </div>
+        <div class="field">
+          <label class="label" for="fGoal">每周投递目标 <span class="hint">1-30</span></label>
+          <input class="input" id="fGoal" type="number" min="1" max="30">
+        </div>
+      </div>
+      <button class="btn btn--primary btn--block" id="btnSave">保存画像</button>
+    </div>
+  </details>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--amber">◐</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">界面与提醒</div>
+        <div class="card__desc">深浅主题、跟进周期与数据说明</div>
+      </div>
+    </div>
+    <div class="row row--between">
+      <span style="font-size:12.4px;font-weight:650">主题</span>
+      <div class="tabs" id="themeTabs">
+        <button class="tab" data-theme-val="dark">夜航</button>
+        <button class="tab" data-theme-val="light">晨雾</button>
+      </div>
+    </div>
+    <div class="note note--ico mt-2">
+      <span class="ico">◷</span>
+      <span><span class="note__t">跟进提醒规则</span>
+      已投递 / 已查看超过 5 天、笔试 / 面试超过 3 天没有更新时，会在「今日」和「投递」页标红提醒。Web 版不会发系统通知，打开页面即可看到。</span>
+    </div>
+  </section>
+
+  <section class="mt-2">
+    <div class="section-head" style="margin-top:0">
+      <h2>成长记录</h2>
+      <span class="sub">这些数据只在本机，用来回头看你走了多远</span>
+    </div>
+
+    <details class="fold">
+      <summary>情绪曲线 · 最近 7 天</summary>
+      <div class="fold__body" id="growMood"></div>
+    </details>
+
+    <details class="fold mt-2">
+      <summary>投递分布 · 你停在哪个阶段</summary>
+      <div class="fold__body" id="growFunnel"></div>
+    </details>
+
+    <details class="fold mt-2">
+      <summary>诊断历史 · 分数有没有涨</summary>
+      <div class="fold__body" id="growDiag"></div>
+    </details>
+
+    <details class="fold mt-2">
+      <summary>防坑检测历史</summary>
+      <div class="fold__body" id="growRadar"></div>
+    </details>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico">▤</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">数据管理</div>
+        <div class="card__desc">换设备前先备份，导入后即恢复</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <button class="btn btn--primary btn--sm" id="btnExport">导出备份</button>
+      <button class="btn btn--sm" id="btnDemo">载入演示数据</button>
+      <button class="btn btn--danger-ghost btn--sm" id="btnReset">清空全部</button>
+    </div>
+
+    <details class="fold mt-2">
+      <summary>备份 JSON（可复制保存）</summary>
+      <div class="fold__body">
+        <textarea class="textarea" id="exportBox" readonly style="min-height:96px;font-size:11px"></textarea>
+      </div>
+    </details>
+
+    <details class="fold mt-2">
+      <summary>从 JSON 恢复</summary>
+      <div class="fold__body">
+        <textarea class="textarea" id="importBox" placeholder="把之前导出的 JSON 整段粘贴进来…" style="min-height:96px"></textarea>
+        <button class="btn btn--primary btn--block mt-2" id="btnImport">导入并覆盖</button>
+      </div>
+    </details>
+  </section>
+
+  <div class="note note--ico mt-2">
+    <span class="ico">◇</span>
+    <span><span class="note__t">隐私说明</span>
+    回音没有账号系统，也不会上传任何简历、JD 或投递内容。所有数据都在当前浏览器本地；清空浏览器缓存会一并清掉，重要数据请先导出备份。</span>
+  </div>
+
+</main>
+
+<div id="foot"></div>
+
+<script src="js/store.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

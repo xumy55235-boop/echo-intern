@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回音 · 防坑雷达</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<main class="wrap">
+
+  <header class="ph">
+    <span class="ph__eyebrow">防坑雷达</span>
+    <div class="ph__row">
+      <h1 class="ph__title">先查一段，<em>再决定</em></h1>
+      <div class="ph__side"><span class="badge badge--line">规则初筛</span></div>
+    </div>
+    <p class="ph__desc">收费、培训贷、刷单返利、私聊引流 —— 粘贴招聘原文或 HR 聊天记录，30 秒看清哪里不对。</p>
+  </header>
+
+  <section class="card">
+    <div class="field">
+      <label class="label" for="radarText">招聘信息 / 聊天记录</label>
+      <textarea class="textarea textarea--tall" id="radarText" placeholder="把岗位描述、HR 说的话整段粘进来…"></textarea>
+    </div>
+    <div class="field">
+      <label class="label" for="radarPos">岗位名称 <span class="hint">可选，便于存历史</span></label>
+      <input class="input" id="radarPos" placeholder="例：市场运营助理">
+    </div>
+    <div class="row">
+      <button class="btn btn--primary" id="btnScan" style="flex:1">开始检测</button>
+      <button class="btn" id="btnDemo">填示例</button>
+      <button class="btn btn--ghost" id="btnClear">清空</button>
+    </div>
+    <div class="field-note">规则只做初筛，不构成法律意见；涉及转账、证件、下载不明 App 的，一律先停手。</div>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--rose">!</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">检测结论</div>
+        <div class="card__desc">命中的原文片段会标出来，方便你核对</div>
+      </div>
+      <button class="icon-btn" id="btnCopy" title="复制结论" aria-label="复制结论">⧉</button>
+    </div>
+    <div id="resultBody"></div>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--mint">✓</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">投递前自查 <span class="field-note" id="checkNote"></span></div>
+        <div class="card__desc">不管检测结果如何，这 7 条都值得确认一遍</div>
+      </div>
+      <div id="checkRing" style="flex:none"></div>
+    </div>
+    <div id="checkList"></div>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--violet">◷</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">检测历史</div>
+        <div class="card__desc">点一条可以回填原文重新看</div>
+      </div>
+    </div>
+    <div id="radarHistory"></div>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--amber">◈</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">危险话术词典</div>
+        <div class="card__desc">群里出现频率最高的那些说法</div>
+      </div>
+    </div>
+    <div class="chips mt-1" id="phraseChips"></div>
+    <div class="mt-2" id="phraseList"></div>
+  </section>
+
+  <div class="note note--ico mt-2">
+    <span class="ico">◇</span>
+    <span><span class="note__t">真的遇到了怎么办</span>
+    不要转账、不发证件、不下载对方指定的 App；保留聊天记录与收款信息，在招聘平台、12321 或国家反诈中心 App 举报。</span>
+  </div>
+
+</main>
+
+<div id="foot"></div>
+
+<script src="js/store.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/radar.js"></script>
+</body>
+</html>

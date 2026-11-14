@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回音 · 同伴进度墙</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<main class="wrap">
+
+  <header class="ph">
+    <span class="ph__eyebrow">同校 · 匿名聚合</span>
+    <div class="ph__row">
+      <h1 class="ph__title">你不是<em>一个人</em></h1>
+      <div class="ph__side"><span class="badge badge--mint" id="feedCount">0 条</span></div>
+    </div>
+    <p class="ph__desc" id="heroSub"></p>
+  </header>
+
+  <div class="note note--ico">
+    <span class="ico">◉</span><span id="heroQuote"></span>
+  </div>
+
+  <div class="statstrip mt-2" id="peerStats"></div>
+
+  <section class="card mt-2" id="youCard"></section>
+
+  <section class="card mt-2" id="weekCard"></section>
+
+  <section class="card mt-2" id="stageCard"></section>
+
+  <section class="card mt-2" id="industryCard"></section>
+
+  <section class="card mt-2" id="moodCard"></section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--cyan">◉</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">匿名动态</div>
+        <div class="card__desc">说出来那一刻，压力就被分走一半</div>
+      </div>
+    </div>
+    <div class="row" style="flex-wrap:nowrap;align-items:flex-start">
+      <textarea class="textarea" id="fdText" placeholder="今天最想吐槽的一句话…（只保存在本机）" style="min-height:64px;flex:1"></textarea>
+      <button class="btn btn--primary" id="fdSend" style="flex:none">发布</button>
+    </div>
+    <div id="feedList" class="mt-2"></div>
+  </section>
+
+  <div id="privacy" class="mt-2"></div>
+
+</main>
+
+<div id="foot"></div>
+
+<script src="js/store.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/wall.js"></script>
+</body>
+</html>

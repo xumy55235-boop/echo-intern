@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回音 · 简历诊断</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<main class="wrap">
+
+  <header class="ph">
+    <span class="ph__eyebrow">简历诊断</span>
+    <div class="ph__row">
+      <h1 class="ph__title">先对标，<em>再投递</em></h1>
+      <div class="ph__side">
+        <button class="btn btn--sm" id="btnDemo">填入示例</button>
+      </div>
+    </div>
+    <p class="ph__desc">同一份简历，照 JD 改三句话，回音率就不一样。把目标岗位和你现在的简历放进来，3 分钟看清差在哪。</p>
+  </header>
+
+  <section class="card" id="inputCard">
+    <div class="card__head">
+      <div class="card__ico">◈</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">两步输入</div>
+        <div class="card__desc">先放岗位要求，再放你的简历</div>
+      </div>
+      <span class="badge badge--line">离线诊断</span>
+    </div>
+
+    <div class="field">
+      <label class="label" for="roleName">① 目标岗位 <span class="hint">可选</span></label>
+      <input class="input" id="roleName" placeholder="例：数据分析实习生">
+    </div>
+
+    <div class="field">
+      <label class="label" for="jdText">岗位 JD <span class="hint">把「任职要求」整段粘进来</span></label>
+      <textarea class="textarea" id="jdText" placeholder="岗位职责 / 任职要求 / 加分项…"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="label">② 你的简历</label>
+      <div class="seg" style="max-width:220px;margin-bottom:8px">
+        <button class="seg__btn is-on" data-mode="paste">整段粘贴</button>
+        <button class="seg__btn" data-mode="blocks">分块填写</button>
+      </div>
+
+      <div id="pasteForm">
+        <textarea class="textarea textarea--tall" id="resumeText" placeholder="直接粘贴简历全文，或按「教育 / 技能 / 项目 / 校园」分段写…"></textarea>
+      </div>
+
+      <div id="blockForm" style="display:none">
+        <div class="field">
+          <label class="label" for="bEdu">教育背景</label>
+          <textarea class="textarea" id="bEdu" placeholder="学校 · 专业 · 年级 · 相关课程"></textarea>
+        </div>
+        <div class="field">
+          <label class="label" for="bSkill">技能</label>
+          <textarea class="textarea" id="bSkill" placeholder="工具 / 语言 / 证书，写清熟练程度"></textarea>
+        </div>
+        <div class="field">
+          <label class="label" for="bProj">项目 / 实习经历</label>
+          <textarea class="textarea" id="bProj" placeholder="每段写：做了什么 → 怎么做的 → 结果如何"></textarea>
+        </div>
+        <div class="field">
+          <label class="label" for="bCampus">校园经历与荣誉</label>
+          <textarea class="textarea" id="bCampus" placeholder="社团 / 竞赛 / 奖学金"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <button class="btn btn--primary btn--block" id="btnRun">开始诊断</button>
+    </div>
+    <div class="row mt-1" style="justify-content:center">
+      <button class="btn btn--ghost btn--sm" id="btnClear">清空重填</button>
+    </div>
+    <div class="field-note">诊断只在本机做规则比对，不上传任何内容。分数用于定位问题，不代表录用结果。</div>
+  </section>
+
+  <div id="result" class="mt-2"></div>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--violet">◷</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">诊断历史</div>
+        <div class="card__desc">分数有没有在涨，一眼就能看到</div>
+      </div>
+    </div>
+    <div id="history"></div>
+  </section>
+
+</main>
+
+<div id="foot"></div>
+
+<script src="js/store.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/diagnose.js"></script>
+</body>
+</html>

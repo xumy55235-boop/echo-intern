@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回音 · 投递台账</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<main class="wrap">
+
+  <header class="ph">
+    <span class="ph__eyebrow">投递台账</span>
+    <div class="ph__row">
+      <h1 class="ph__title">每一份投递，<em>都有下落</em></h1>
+      <div class="ph__side">
+        <button class="icon-btn" id="btnNew" aria-label="新建投递">＋</button>
+      </div>
+    </div>
+    <p class="ph__desc" id="ledgerSub">记录一次，跟进就有依据。</p>
+  </header>
+
+  <div class="statstrip" id="stats"></div>
+
+  <div id="filters">
+    <div class="toolbar mt-2">
+      <input class="input" id="q" placeholder="搜公司 / 岗位 / 备注">
+      <div class="seg" id="viewTabs">
+        <button class="seg__btn is-on" data-view="board">看板</button>
+        <button class="seg__btn" data-view="list">列表</button>
+      </div>
+    </div>
+
+    <div class="chips chips--scroll mt-2" id="stageChips"></div>
+
+    <div class="toolbar mt-2">
+      <select class="select" id="selChannel"><option value="">全部渠道</option></select>
+      <select class="select" id="selSort">
+        <option value="time">按投递时间</option>
+        <option value="idle">按滞留天数</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="emptyBox" class="mt-2"></div>
+
+  <section id="ledger" class="mt-2">
+    <div id="boardView"></div>
+    <div id="listView"></div>
+  </section>
+
+  <div id="sideArea" class="mt-2">
+    <section class="card">
+      <div class="card__head">
+        <div class="card__ico card__ico--amber">!</div>
+        <div style="flex:1;min-width:0">
+          <div class="card__title">该跟进了</div>
+          <div class="card__desc">按滞留天数排序，先处理最久的</div>
+        </div>
+      </div>
+      <div id="reminders"></div>
+    </section>
+
+    <section class="card mt-2">
+      <div class="card__head">
+        <div class="card__ico">▤</div>
+        <div style="flex:1;min-width:0">
+          <div class="card__title">渠道分布</div>
+          <div class="card__desc">哪个渠道真的会回你</div>
+        </div>
+      </div>
+      <div id="channelDist"></div>
+    </section>
+
+    <section class="card mt-2">
+      <div class="card__head">
+        <div class="card__ico card__ico--cyan">▥</div>
+        <div style="flex:1;min-width:0">
+          <div class="card__title">近 8 周投递量</div>
+          <div class="card__desc">节奏比爆发更重要</div>
+        </div>
+      </div>
+      <div id="weekBars"></div>
+    </section>
+  </div>
+
+</main>
+
+<div id="foot"></div>
+
+<script src="js/store.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/tracker.js"></script>
+</body>
+</html>

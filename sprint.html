@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回音 · 每周陪跑</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="nav"></div>
+
+<main class="wrap">
+
+  <header class="ph">
+    <span class="ph__eyebrow">每周陪跑</span>
+    <div class="ph__row">
+      <h1 class="ph__title">这周，<em>只做可控的事</em></h1>
+      <div class="ph__side"><span class="badge badge--mint" id="streak">连续 0 天</span></div>
+    </div>
+    <p class="ph__desc">岗位要不要你，你说了不算；但改哪段简历、跟进哪一家、补哪个缺口，你说了算。</p>
+  </header>
+
+  <section class="card today" id="sprintTop"></section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico card__ico--mint">✓</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">今天先做这三件</div>
+        <div class="card__desc">只做这三件，今天就算达标</div>
+      </div>
+    </div>
+    <div id="today3"></div>
+  </section>
+
+  <section class="card mt-2">
+    <div class="card__head">
+      <div class="card__ico">▤</div>
+      <div style="flex:1;min-width:0">
+        <div class="card__title">本周清单</div>
+        <div class="card__desc">勾掉一件，焦虑就少一格</div>
+      </div>
+      <button class="btn btn--sm" id="btnGenTop">重新生成</button>
+    </div>
+
+    <div class="chips chips--scroll" id="filter"></div>
+
+    <div id="list" class="mt-2"></div>
+
+    <div class="row mt-2" style="flex-wrap:nowrap">
+      <input class="input" id="newText" placeholder="加一件你想做的具体动作…" style="flex:1;min-width:0">
+      <button class="btn btn--primary" id="btnAdd">加入</button>
+    </div>
+  </section>
+
+  <details class="fold mt-2">
+    <summary>这周 7 天做了什么</summary>
+    <div class="fold__body" id="week7"></div>
+  </details>
+
+  <details class="fold mt-2">
+    <summary>周复盘 · 前几周完成率</summary>
+    <div class="fold__body" id="history"></div>
+  </details>
+
+  <details class="fold mt-2">
+    <summary>情绪打卡 · 今天感觉如何</summary>
+    <div class="fold__body">
+      <div id="moodBar"></div>
+      <div class="mood-row mt-2" id="moods"></div>
+      <div class="field-note mt-1" id="moodHint"></div>
+    </div>
+  </details>
+
+</main>
+
+<div id="foot"></div>
+
+<script src="js/store.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/agent.js"></script>
+<script src="js/sprint.js"></script>
+</body>
+</html>
